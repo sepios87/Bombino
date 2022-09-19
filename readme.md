@@ -14,8 +14,8 @@
 
 ## Rendu de l'intégration : 
 
-<img src="https://github.com/sepios87/Bombino/blob/master/github-images/1.png">
-<img src="https://github.com/sepios87/Bombino/blob/master/github-images/2.png">
-<img src="https://github.com/sepios87/Bombino/blob/master/github-images/3.png">
-<img src="https://github.com/sepios87/Bombino/blob/master/github-images/4.png">
-<img src="https://github.com/sepios87/Bombino/blob/master/github-images/5.png">
+<img src="https://github.com/sepios87/Bombino/blob/master/github-images/1.png" width="200">
+<img src="https://github.com/sepios87/Bombino/blob/master/github-images/2.png" width="200">
+<img src="https://github.com/sepios87/Bombino/blob/master/github-images/3.png" width="200">
+<img src="https://github.com/sepios87/Bombino/blob/master/github-images/4.png" width="200">
+<img src="https://github.com/sepios87/Bombino/blob/master/github-images/5.png" width="200">
