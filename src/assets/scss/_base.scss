@@ -1,0 +1,30 @@
+
+/* Regles generales */
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+ 
+  font-size: 2rem;
+  font-family: 'pompiere';
+}
+
+a, a:hover, a:visited{
+  color: #FFF;
+  text-decoration: none;
+}
+
+img{
+  max-width:100%;
+  height: auto;
+  vertical-align: middle; 
+}
+
+
+

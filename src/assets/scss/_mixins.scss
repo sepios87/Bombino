@@ -1,0 +1,31 @@
+@mixin underline($bottom) {
+    position: relative;
+    width: fit-content;
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: .5rem;
+        width: 32%;
+        background-color: $orange;
+        bottom: $bottom;
+        z-index: -1;
+    }
+}
+
+@mixin floatingElement($url, $size: 16px) {
+    content: "";
+    background-image: url($url);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    width: $size; 
+    height: $size;
+    position: absolute;
+
+    @media screen and (min-width: 780px) {
+        width: $size; 
+        height: $size;
+    }
+}

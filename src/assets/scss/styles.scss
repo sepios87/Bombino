@@ -1,0 +1,698 @@
+@import 'mixins';
+@import 'color';
+@import 'reset';
+@import 'base';
+@import 'font';
+
+$titleFontSize: 4.2rem;
+$subTitleFontSize: 3.8rem;
+
+.nav {
+    background-color: $black;
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    padding: 1rem 0;
+    z-index: 100;
+
+    &__list {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &__item {
+        font-size: 4.5vw;
+
+        @media screen and (min-width: 780px) {
+            font-size: 2.5rem;
+        }
+    }
+
+    &__item:first-child {
+        @include underline(0.5px);
+
+        @media screen and (min-width: 780px) {
+            @include underline(2px);
+        }
+    }
+}
+
+.logo {
+    background-color: $black;
+    width: 15rem;
+    height: 15rem;
+    clip-path: polygon(0 0, 0 100%, 100% 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 6rem 0 0;
+    position: absolute;
+    transition: .2s;
+
+    &:hover {
+        background-color: rgba($black, 0.9);
+    }
+
+    &__text {
+        color: white;
+        letter-spacing: 0.3rem;
+        font-size: 1.8rem;
+
+        @media screen and (min-width: 780px) {
+            font-size: 2rem;
+        }
+    }
+
+    &__image {
+        filter: brightness(10);
+        width: 6rem;
+    }
+}
+
+.header {
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 7rem;
+
+        @media screen and (min-width: 780px) {
+            flex-direction: row-reverse;
+            padding-left: 8%;
+        }
+    }
+
+    &__title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media screen and (min-width: 780px) {
+            display: block;
+            width: 60%;
+        }
+
+        @media screen and (min-width: 1200px) {
+            width: 30%;
+        }
+    }
+
+    &__text {
+        margin-bottom: 1rem;
+        text-align: right;
+        padding: 0 15% 0 8rem;
+        font-size: 4rem;
+    }
+
+    &__slogan {
+        margin: 4vh 0 4vh;
+        font-size: 16vw;
+        line-height: 150%;
+
+        @media screen and (min-width: 780px) {
+            font-size: 7vw;
+            line-height: auto;
+        }
+
+        @media screen and (min-width: 1200px) {
+            font-size: 5vw;
+        }
+    }
+
+    &__figure {
+        display: block;
+        margin: auto;
+    }
+
+    &__image {
+        display: block;
+        width: 80%;
+        margin: auto;
+
+        @media screen and (min-width: 780px) {
+            width: 60%;
+        }
+    }
+}
+
+.nous-sommes {
+    margin-top: 12vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10%;
+
+    @media screen and (min-width: 780px) {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        grid-column-gap: 4vw;
+        padding: 0 15% 0 8%;
+    }
+
+    &__title-container {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        @media screen and (min-width: 780px) {
+            grid-column: 2;
+        }
+
+        &::before {
+            @include floatingElement('../img/items/brioche.png');
+            top: -2.5rem;
+            left: -2rem;
+            transform: rotate(-30deg);
+        }
+
+        &::after {
+            @include floatingElement('../img/items/pain.png');
+            right: 0;
+            transform: rotate(10deg);
+        }
+    }
+
+    &__container-text {
+        @media screen and (min-width: 780px) {
+            grid-column: 2;
+        }
+    }
+
+    &__title {
+        font-size: $titleFontSize;
+    }
+
+    &__subtitle {
+        font-size: $subTitleFontSize;
+        @include underline(5px);
+    }
+
+    &__image {
+        height: 20vh;
+        object-fit: cover;
+        border-radius: 5px;
+        margin: 4vh 0 3vh;
+
+        @media screen and (min-width: 780px) {
+            height: 40rem;
+            width: 100%;
+            margin: 0;
+            grid-column: 1;
+            grid-row: 1 / 3;
+        }
+    }
+
+    &__text {
+        line-height: 2rem;
+        margin-bottom: 2vh;
+
+        @media screen and (min-width: 780px) {
+            order: 3;
+        }
+    }
+}
+
+.carte {
+    margin-top: 8vh;
+    padding: 0 10%;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-row-gap: 1rem;
+
+    @media screen and (min-width: 780px) {
+        grid-column-gap: 5rem;
+        padding: 0 8%;
+    }
+
+    &__text {
+        display: none;
+
+        @media screen and (min-width: 780px) {
+            display: block;
+            height: 0;
+            width: 80%;
+        }
+    }
+
+    &__la {
+        grid-column: 1 / 3;
+        font-size: 2.2rem;
+
+        @media screen and (min-width: 780px) {
+            grid-column: 2;
+            grid-row: 1;
+            font-size: $titleFontSize;
+        }
+    }
+
+    &__ici {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1rem;
+        text-align: center;
+        position: relative;
+        font-size: 2.5rem;
+        top: 75%;
+
+        &::before {
+            @include floatingElement('../img/items/instrument_cuisine.png');
+            top: -3rem;
+            left: 10%;
+            transform: rotate(90deg) scale(-1);
+
+            @media screen and (min-width: 780px) {
+                top: 6rem;
+            }
+        }
+
+        &::after {
+            @media screen and (min-width: 780px) {
+                @include floatingElement(
+                    $url: '../img/fleches/mutliples_fleches_carte.png',
+                    $size: 15rem
+                );
+                right: -12rem;
+                top: 5rem;
+            }
+
+            @media screen and (min-width: 1200px) {
+                right: -16rem;
+            }
+        }
+
+        @media screen and (min-width: 780px) {
+            grid-column: 1;
+            grid-row: 2;
+            flex-direction: row-reverse;
+            text-align: left;
+            column-gap: 8%;
+            font-size: $titleFontSize;
+            position: relative;
+            top: 25%;
+            left: 20%;
+        }
+    }
+
+    &__drapeau {
+        width: 5rem;
+    }
+
+    &__image {
+        width: 100%;
+        max-height: 30rem;
+        object-fit: contain;
+        transition: .2s;
+
+        &:hover {
+           transform: scale(1.05);
+        }
+    }
+}
+
+.produits {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20vh;
+    position: relative;
+
+    &::before {
+        @include floatingElement('../img/items/brioche.png');
+        transform: rotate(15deg);
+        bottom: 15%;
+
+        @media screen and (min-width: 780px) {
+            bottom: 0;
+            left: 65%;
+        }
+    }
+
+    &__title {
+        font-size: $titleFontSize;
+        @include underline(5px);
+
+        &::before {
+            @include floatingElement('../img/items/deux_pains.png');
+            right: -3rem;
+            transform: rotate(40deg);
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        @media screen and (min-width: 780px) {
+            row-gap: 20px;
+        }
+    }
+
+    &__item {
+        width: 42%;
+
+        &:nth-child(n + 5) {
+            display: none;
+
+            @media screen and (min-width: 780px) {
+                display: block;
+            }
+        }
+
+        @media screen and (min-width: 780px) {
+            width: 20%;
+            margin: 0 5%;
+        }
+
+        a {
+            color: $black;
+        }
+    }
+}
+
+.produit {
+    margin: 4vh 0 2vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &__image {
+        width: 100%;
+    }
+
+    &__text {
+        position: absolute;
+        font-size: 5vw;
+
+        @media screen and (min-width: 780px) {
+            font-size: 2.5vw;
+        }
+
+        @media screen and (min-width: 1200px) {
+            font-size: 2.3vw;
+        }
+
+        &--pain-complet {
+            left: 40%;
+            top: -2px;
+        }
+
+        &--pain-campagne {
+            bottom: 0;
+            right: 15%;
+        }
+
+        &--croissant {
+            left: 25%;
+        }
+
+        &--donut {
+            bottom: 0;
+            left: 65%;
+        }
+
+        &--muffin {
+            left: 20%;
+        }
+
+        &--farine {
+            right: 18%;
+        }
+    }
+}
+
+.afficher-plus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+
+    @media screen and (min-width: 780px) {
+        display: none;
+    }
+
+    &__text {
+        color: $black;
+    }
+
+    &__icon {
+        width: 3rem;
+    }
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10vh 0;
+
+    &__title {
+        font-size: $titleFontSize;
+        margin-bottom: 4vh;
+        @include underline(5px);
+
+        &::before {
+            @include floatingElement('../img/items/orge.png');
+            left: -3rem;
+            transform: rotate(90deg) scale(-1);
+        }
+    }
+}
+
+.formulaire {
+    display: flex;
+    width: 90%;
+    position: relative;
+    border: solid $black 1px;
+
+    @media screen and (min-width: 780px) {
+        width: 80%;
+    }
+
+    &::before {
+        @include floatingElement('../img/items/pain.png');
+        left: 23%;
+        top: 3%;
+        transform: rotate(80deg);
+
+        @media screen and (min-width: 780px) {
+            transform: rotate(80deg);
+            left: 1%;
+            top: 8%;
+        }
+    }
+
+    &__content {
+        width: 75%;
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (min-width: 780px) {
+            width: 50%;
+        }
+
+        &::before {
+            @media screen and (min-width: 780px) {
+                content: '';
+                display: block;
+                position: absolute;
+                height: 50%;
+                width: 1px;
+                background-color: $black;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    &__timbre {
+        position: absolute;
+        height: 3.5rem;
+        right: 3%;
+        top: 5%;
+
+        @media screen and (min-width: 780px) {
+            height: 6rem;
+        }
+    }
+
+    &__input {
+        margin: 8% 7.5rem 4% 5%;
+        font-family: 'pompiere';
+        color: lighten($black, 20%);
+        border: none;
+        border-bottom: solid $black 1px;
+        padding-bottom: 5px;
+        resize: none;
+
+        @media screen and (min-width: 780px) {
+            font-size: 1.8rem;
+            margin-left: 8%;
+        }
+    }
+
+    &__image {
+        width: 25%;
+        object-fit: cover;
+
+        @media screen and (min-width: 780px) {
+            padding: 3% 2%;
+            width: 40%;
+        }
+    }
+}
+
+.footer {
+    background-color: $black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 3% 5rem;
+
+    @media screen and (min-width: 780px) {
+        padding-bottom: 6rem;
+    }
+
+    &__copyright {
+        width: 20%;
+        font-size: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        row-gap: 0.3rem;
+        text-align: right;
+
+        @media screen and (min-width: 780px) {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: solid white 1px;
+    padding-left: 6%;
+
+    &__title {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+
+        @media screen and (min-width: 780px) {
+            font-size: 2.8rem;
+        }
+    }
+
+    &__list {
+        display: flex;
+        column-gap: 2rem;
+    }
+
+    &__item {
+        width: 2.3rem;
+
+        @media screen and (min-width: 780px) {
+            width: 2.8rem;
+        }
+    }
+}
+
+.article-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 10% 6rem;
+    min-height: 100vh;
+
+    &__subtitle {
+        font-size: $titleFontSize;
+        margin-bottom: 1rem;
+        @include underline(5px);
+    }
+
+    &__title {
+        font-size: $titleFontSize;
+        position: relative;
+
+        &::before {
+            @include floatingElement('../img/items/pain.png');
+            right: -3rem;
+            transform: rotate(80deg);
+        }
+    }
+}
+
+.description {
+    margin-bottom: 8vh;
+
+    @media screen and (min-width: 780px) {
+        margin-bottom: 3vh;
+    }
+
+    @media screen and (min-width: 1200px) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__container {
+        @media screen and (min-width: 1200px) {
+            width: 50%;
+            margin-top: 6vw;
+        }
+    }
+
+    &__image {
+        width: 80%;
+        display: block;
+        margin: auto;
+
+        @media screen and (min-width: 780px) {
+            width: 40%;
+        }
+    }
+
+    &__title {
+        font-size: 3rem;
+        margin-bottom: 2vh;
+    }
+
+    &__price {
+        font-size: 4rem;
+        margin-top: 4vh;
+    }
+}
+
+.back-line {
+    display: block;
+}
+
+.button {
+    background-color: $black;
+    color: white;
+    padding: 1rem 3rem;
+    border-radius: 6px;
+    font-size: 1.6rem;
+    border: none;
+    font-family: 'pompiere';
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    box-shadow: -2px 1px 2px -1px rgba(0, 0, 0, .1);
+    transition: .2s;
+
+    &:hover {
+        background-color: rgba($black, 0.3);
+        color: $black;
+    }
+
+    &--submit {
+        margin: 0 7.5rem 5% 5%;
+        padding: 0.5rem 3rem;
+        font-size: 1.2rem;
+
+        @media screen and (min-width: 780px) {
+            margin-left: 8%;
+            font-size: 1.6rem;
+        }
+    }
+}
